@@ -1,8 +1,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="static/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="static/reveal.js/css/theme/white.css">
+    <link rel="stylesheet" href="static/revealjs/css/reveal.css">
+    <link rel="stylesheet" href="static/revealjs/css/theme/white.css">
   </head>
   <body>
     <div class="reveal">
@@ -45,7 +45,20 @@
 
         <section data-background="#b5533c">
           <h3 id="second-slide">Monolithische Architektur</h3>
+          <span class="fragment">am Beispiel von</span>
         </section>
+
+        <section>
+          <img data-src="static/img/youtube-full-page.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section>Slide 2</section>
+
+        <section>Slide 2</section>
+
+        <section>Slide 2</section>
+
+
 
         <section>
           <h3>Fear of change</h3>
@@ -59,17 +72,9 @@
         <section>Slide 2</section>
 
         <section>Slide 2</section>
-
-        <section>Slide 2</section>
-
-        <section>Slide 2</section>
-
-        <section>Slide 2</section>
-
-        <section>Slide 2</section>
       </div>
     </div>
-    <script src="static/reveal.js/js/reveal.js"></script>
+    <script src="static/revealjs/js/reveal.js"></script>
     <script>
     Reveal.initialize({
 
@@ -167,7 +172,7 @@
       dependencies: [
         // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
         {
-          src: 'static/reveal.js/lib/js/classList.js',
+          src: 'static/revealjs/lib/js/classList.js',
           condition: function() {
             return !document.body.classList;
           }
@@ -175,14 +180,14 @@
 
         // Interpret Markdown in <section> elements
         {
-          src: 'static/reveal.js/plugin/markdown/marked.js',
+          src: 'static/revealjs/plugin/markdown/marked.js',
           condition: function() {
             return !!document.querySelector( '[data-markdown]' );
           }
         },
 
         {
-          src: 'static/reveal.js/plugin/markdown/markdown.js',
+          src: 'static/revealjs/plugin/markdown/markdown.js',
           condition: function() {
             return !!document.querySelector( '[data-markdown]' );
           }
@@ -190,7 +195,7 @@
         /*
         // Syntax highlight for <code> elements
         {
-          src: 'static/reveal.js/plugin/highlight/highlight.js',
+          src: 'static/revealjs/plugin/highlight/highlight.js',
           async: true,
           callback: function() {
             hljs.initHighlightingOnLoad();
@@ -199,19 +204,19 @@
 
         // Zoom in and out with Alt+click
         {
-          src: 'static/reveal.js/plugin/zoom-js/zoom.js',
+          src: 'static/revealjs/plugin/zoom-js/zoom.js',
           async: true
         },
 
         // Speaker notes
         {
-          src: 'static/reveal.js/plugin/notes/notes.js',
+          src: 'static/revealjs/plugin/notes/notes.js',
           async: true
         },
 
         // MathJax
         {
-          src: 'static/reveal.js/plugin/math/math.js',
+          src: 'static/revealjs/plugin/math/math.js',
           async: true
         }
         */
