@@ -7,36 +7,8 @@
   <body>
     <div class="reveal">
       <div class="slides">
+
         <section data-state="front">
-          <h2 id="title-of-talk">Microservices > Monolith</h2>
-        </section>
-
-        <section>
-          <h3>Was sind Microservices?</h3>
-          <blockquote class="fragment">
-            &ldquo;Microservices sind ein Architekturmuster der Informationstechnik, bei dem komplexe Anwendungssoftware aus kleinen, unabhängigen Prozessen komponiert wird, die untereinander mit sprachunabhängigen Programmierschnittstellen kommunizieren.&rdquo;
-          </blockquote>
-          </p>
-          <blockquote class="fragment">
-            &ldquo;Do One Thing and Do It Well&rdquo;
-          </blockquote>
-        </section>
-
-        <section>
-          <h3>Vor allem sind Microservices...</h3>
-        </section>
-
-        <section>
-          <h3>...der neue heiße Scheiß</h3>
-        </section>
-
-        <section>
-          <h3>Gartner Hype Cycle</h3>
-          <img class="fragment" data-src="static/img/Gartner_Hype_Zyklus.svg">
-
-        </section>
-
-        <section>
           <h2>
             <span class="fragment highlight-blue" data-fragment-index="2">Microservices</span> &gt;
             <span class="fragment highlight-red" data-fragment-index="1">Monolith</span>
@@ -82,6 +54,79 @@
 
         <section data-transition="fade-in">
           <img data-src="static/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="static/img/videoviewui-base.svg" style="border:none;">
+        </section>
+
+        <section data-background="#b5533c">
+          <h2>Vorteile</h2>
+        </section>
+
+        <section>
+          <h3>einfach zu Entwickeln</h3>
+          <p>die meisten Entwicklungswerkzeuge sind auf Monolithen ausgelegt</p>
+        </section>
+
+        <section>
+          <h3>einfach zu Deployen</h3>
+          <pre><code data-trim data-noescape>$ scp -rp ./monolith root@webserver:/srv</code></pre>
+        </section>
+
+        <section>
+          <h3>einfach zu Testen</h3>
+          <p>da keine/kaum Abhängigkeiten zu externen Diensten vorhanden sind</p>
+        </section>
+
+        <section>
+          <h3>einfach zu Verstehen</h3>
+          <p>eine Codebase ist relativ einfach zu Verstehen</p>
+        </section>
+
+        <section>
+          <h3>einfach zu Skalieren</h3>
+          <p>Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+        </section>
+
+        <section>
+          <h3>eine monolithische Software-Architektur ist also</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1">einfach zu Entwickeln <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu Deployen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu Testen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu Verstehen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu Skalieren <span class="fragment" data-fragment-index="2">(*)</span></li>
+          </ul>
+          <p class="fragment" data-fragment-index="2">(*) zumindest zu Beginn</span>
+        </section>
+
+        <section>
+
+        </section>
+
+        <section>
+          <h3>Was sind Microservices?</h3>
+          <blockquote class="fragment">
+            &ldquo;Microservices sind ein Architekturmuster der Informationstechnik, bei dem komplexe Anwendungssoftware aus kleinen, unabhängigen Prozessen komponiert wird, die untereinander mit sprachunabhängigen Programmierschnittstellen kommunizieren.&rdquo;
+          </blockquote>
+          </p>
+          <blockquote class="fragment">
+            &ldquo;Do One Thing and Do It Well&rdquo;
+          </blockquote>
+        </section>
+
+        <section>
+          <h3>Vor allem sind Microservices...</h3>
+        </section>
+
+        <section>
+          <h3>...der neue heiße Scheiß</h3>
+        </section>
+
+        <section>
+          <h3>Gartner Hype Cycle</h3>
+          <img class="fragment" data-src="static/img/Gartner_Hype_Zyklus.svg">
         </section>
 
         <section>Slide 2</section>
