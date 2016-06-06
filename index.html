@@ -66,7 +66,8 @@
 
         <section>
           <h3>einfach zu Entwickeln</h3>
-          <p>die meisten Entwicklungswerkzeuge sind auf Monolithen ausgelegt</p>
+          <p>die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
+          <p>großer Erfahrungsschatz vorhanden</p>
         </section>
 
         <section>
@@ -76,12 +77,13 @@
 
         <section>
           <h3>einfach zu Testen</h3>
-          <p>da keine/kaum Abhängigkeiten zu externen Diensten vorhanden sind</p>
+          <p>man kann immer den gesammten Monolithen testen</p>
+          <p>keine/kaum Abhängigkeiten</p>
         </section>
 
         <section>
           <h3>einfach zu Verstehen</h3>
-          <p>eine Codebase ist relativ einfach zu Verstehen</p>
+          <!--<p>Codebase wächst organisch</p>-->
         </section>
 
         <section>
@@ -90,7 +92,7 @@
         </section>
 
         <section>
-          <h3>eine monolithische Software-Architektur ist also</h3>
+          <h3>eine monolithische Software-Architektur ist also:</h3>
           <ul>
             <li class="fragment" data-fragment-index="1">einfach zu Entwickeln <span class="fragment" data-fragment-index="2">(*)</span></li>
             <li class="fragment" data-fragment-index="1">einfach zu Deployen <span class="fragment" data-fragment-index="2">(*)</span></li>
@@ -102,7 +104,68 @@
         </section>
 
         <section>
+          <h3>
+            Denn im laufe der Zeit wird aus <span style="color:#af0000;">einfach zu Entwickeln</span>
+          </h3>
+        </section>
 
+        <section>
+          <h3>
+            <span style="color:#af0000;">schwer weiter zu Entwickeln</span>
+          </h3>
+          <p class="fragment">Änderung an Modul A verändert auch Modul B</p>
+          <p class="fragment">Modularität geht verloren</p>
+          <p class="fragment">Neues Feature X braucht Library A in Version 3.15</p>
+          <p class="fragment">Altes Feature Y braucht Library A in Version 2.8.02</p>
+        </section>
+
+        <section>
+          <h3>
+            Aus <span style="color:#af0000;">einfach zu Deployen</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            <span style="color:#af0000;">kompliziert zu Deployen</span>
+          </h3>
+          <p class="fragment">Änderungen in einem Modul benötigen Redeploy der gesammten Applikation</p>
+          <p class="fragment">Continuous Deployment schwer umzusetzen</p>
+        </section>
+
+        <section>
+          <h3>
+            Aus <span style="color:#af0000;">einfach zu Skalieren</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            <span style="color:#af0000;">schwer performant zu Skalieren</span>
+          </h3>
+          <p class="fragment">Ressourcenhungrig</p>
+        </section>
+
+        <section>
+          <h3>
+            Aus <span style="color:#af0000;">einfach zu Verstehen</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            <span style="color:#af0000;">schwer zu Folgen</span>
+          </h3>
+          <p class="fragment">besonders neue Entwickler werden eingeschüchtert durch komplexe monolithische Codebase</p>
+        </section>
+
+        <section>
+          <h3>Fear of change</h3>
+          <img class="fragment" data-src="static/img/icd-10-fear-of-change.png">
+        </section>
+
+        <section data-background="#368da2">
+          <h3>Microservice Architektur</h3>
         </section>
 
         <section>
@@ -129,7 +192,16 @@
           <img class="fragment" data-src="static/img/Gartner_Hype_Zyklus.svg">
         </section>
 
-        <section>Slide 2</section>
+        <section>
+          <section>
+          <img data-src="static/img/videoviewui-base.svg" style="border:none;">
+        </section>
+          <section data-transition="fade-in">
+            <img data-src="static/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
+          </section>
+        </section>
+
+        <section><img data-src="static/img/videoviewui-microservice-db.svg" style="border:none;"></section>
 
         <section>Slide 2</section>
 
@@ -157,13 +229,6 @@
 
         <section data-transition="fade-in">
           <img data-src="static/img/youtube-full-page-without-video-stats-4.png" style="border:none;padding:0;margin-top:-60px;">
-        </section>
-
-
-
-        <section>
-          <h3>Fear of change</h3>
-          <img class="fragment" data-src="static/img/icd-10-fear-of-change.png">
         </section>
 
         <section>Slide 2</section>
