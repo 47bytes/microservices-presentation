@@ -3,6 +3,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="static/revealjs/css/reveal.css">
     <link rel="stylesheet" href="static/revealjs/css/theme/white.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
@@ -16,7 +22,7 @@
         </section>
 
         <section data-background="#b5533c">
-          <h3 id="second-slide">Monolithische Architektur</h3>
+          <h3>Monolithische Software-Architektur</h3>
           <span class="fragment">am Beispiel von</span>
         </section>
 
@@ -66,55 +72,55 @@
 
         <section>
           <h3>einfach zu Entwickeln</h3>
-          <p>die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
-          <p>großer Erfahrungsschatz vorhanden</p>
+          <p class="fragment">die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
+          <p class="fragment">großer Erfahrungsschatz vorhanden</p>
         </section>
 
         <section>
           <h3>einfach zu Deployen</h3>
-          <pre><code data-trim data-noescape>$ scp -rp ./monolith root@webserver:/srv</code></pre>
+          <pre class="fragment"><code data-trim data-noescape>$ scp -rp ./monolith root@webserver:/srv</code></pre>
         </section>
 
         <section>
           <h3>einfach zu Testen</h3>
-          <p>man kann immer den gesammten Monolithen testen</p>
-          <p>keine/kaum Abhängigkeiten</p>
+          <p class="fragment">man kann immer den gesamten Monolithen testen</p>
+          <p class="fragment">keine/kaum Abhängigkeiten</p>
         </section>
 
         <section>
           <h3>einfach zu Verstehen</h3>
-          <!--<p>Codebase wächst organisch</p>-->
+          <p class="fragment">zu Anfang übersichtliche Codebase</p>
         </section>
 
         <section>
           <h3>einfach zu Skalieren</h3>
-          <p>Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+          <p class="fragment">Monolithen auf mehreren Servern spawnen + Load Balancing</p>
         </section>
 
         <section>
           <h3>eine monolithische Software-Architektur ist also:</h3>
           <ul>
-            <li class="fragment" data-fragment-index="1">einfach zu Entwickeln <span class="fragment" data-fragment-index="2">(*)</span></li>
-            <li class="fragment" data-fragment-index="1">einfach zu Deployen <span class="fragment" data-fragment-index="2">(*)</span></li>
-            <li class="fragment" data-fragment-index="1">einfach zu Testen <span class="fragment" data-fragment-index="2">(*)</span></li>
-            <li class="fragment" data-fragment-index="1">einfach zu Verstehen <span class="fragment" data-fragment-index="2">(*)</span></li>
-            <li class="fragment" data-fragment-index="1">einfach zu Skalieren <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu entwickeln <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu deployen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu testen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu verstehen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu skalieren <span class="fragment" data-fragment-index="2">(*)</span></li>
           </ul>
           <p class="fragment" data-fragment-index="2">(*) zumindest zu Beginn</span>
         </section>
 
         <section>
           <h3>
-            Denn im laufe der Zeit wird aus <span style="color:#af0000;">einfach zu Entwickeln</span>
+            Denn im Laufe der Zeit wird aus <span style="color:#af0000;">einfach zu Entwickeln</span>
           </h3>
         </section>
 
         <section>
           <h3>
-            <span style="color:#af0000;">schwer weiter zu Entwickeln</span>
+            <span style="color:#af0000;">schwer weiterzuentwickeln</span>
           </h3>
           <p class="fragment">Änderung an Modul A verändert auch Modul B</p>
-          <p class="fragment">Modularität geht verloren</p>
+          <!--<p class="fragment">Modularität geht verloren</p>-->
           <p class="fragment">Neues Feature X braucht Library A in Version 3.15</p>
           <p class="fragment">Altes Feature Y braucht Library A in Version 2.8.02</p>
         </section>
@@ -127,10 +133,14 @@
 
         <section>
           <h3>
-            <span style="color:#af0000;">kompliziert zu Deployen</span>
+            wird <span style="color:#af0000;">kompliziert zu Deployen</span>
           </h3>
-          <p class="fragment">Änderungen in einem Modul benötigen Redeploy der gesammten Applikation</p>
+          <p class="fragment">Änderungen in einem Modul benötigen Redeploy der gesamten Applikation</p>
           <p class="fragment">Continuous Deployment schwer umzusetzen</p>
+          
+          <aside class="notes">
+            hintergrund jobs - taskschedeuling
+          </aside>
         </section>
 
         <section>
@@ -141,7 +151,7 @@
 
         <section>
           <h3>
-            <span style="color:#af0000;">schwer performant zu Skalieren</span>
+            wird <span style="color:#af0000;">schwer performant zu Skalieren</span>
           </h3>
           <p class="fragment">Ressourcenhungrig</p>
         </section>
@@ -154,14 +164,21 @@
 
         <section>
           <h3>
-            <span style="color:#af0000;">schwer zu Folgen</span>
+            wird <span style="color:#af0000;">schwer zu Folgen</span>
           </h3>
-          <p class="fragment">besonders neue Entwickler werden eingeschüchtert durch komplexe monolithische Codebase</p>
+          <p class="fragment">Besonders neue Entwickler werden durch komplexe monolithische Codebase eingeschüchtert</p>
+          <p class="fragment">Schwer zu ändern</p>
+          <aside class="notes">
+            aus schwer zu verstehen => schwer zu ändern => entwicklungsgeschwindigkeit nimmt drastisch ab
+            keinen ZWANG modularität zu wahren => modularität bricht zusammen
+            aus schwer zu verstehen => wie implementiert man richtig änderungen? => wann wird es zeit zu refactorn? => codequality nimmt ab
+          </aside>
         </section>
 
         <section>
           <h3>Fear of change</h3>
-          <img class="fragment" data-src="static/img/icd-10-fear-of-change.png">
+          <img style="border:none" data-src="static/img/icd-10-fear-of-change.png">
+          <p class="fragment">Lässt Entwicklungsgeschwindigkeit drastisch abnehmen</p>
         </section>
 
         <section data-background="#368da2">
@@ -211,6 +228,9 @@
 
         <section>
           <h3>einfache, kleine Services</h3>
+          <aside class="notes">
+            notiz
+          </aside>
         </section>
 
         <section>
@@ -222,31 +242,44 @@
         </section>
 
         <section>
-          <h3>Höhere Stabilität</h3>
-        </section>
-
-        <section>
           <h3>Einfacher neue Technologien auszuprobieren</h3>
-        </section>
-
-        <section data-background="#368da2">
-          <h2>Nachteile</h2>
-        </section>
-
-        <section>
-          <h3>Schwerer zu Testen</h3>
         </section>
 
         <section data-background="#368da2">
           <h2>Was ist zu beachten?</h2>
         </section>
+        
+        <section>
+          <h3>API Gateway</h3>
+        </section>
+        
+        <section>
+          <h3>Fehlertoleranz</h3>
+        </section>
+        
+        <section>
+          <h3>Test Strategie</h3>
+        </section>
+        
+        <section>
+          <h3>Logging</h3>
+        </section>
 
         <section>
           <h3>Messaging</h3>
+          <p>Messaging oder RPC</p>
+          <aside class="notes">
+            gRPC, Protobuf,
+          </aside>
+        </section>
+        
+        <section>
+          <h3>Versioning von Messages</h3>
         </section>
 
         <section>
           <h3>Service Discovery</h3>
+          <p>Client- oder Server-side Discovery</p>
         </section>
 
         <section><img data-src="static/img/microservice-patterns.jpg" style="border:none;"></section>
@@ -255,6 +288,10 @@
           <h3 id="second-slide">Wie macht man aus einer monolithischen- eine Microservice Infrastruktur?</h3>
         </section>
 
+        <section data-transition="fade-in">
+          <img data-src="static/img/from-monolith-to-microservice.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+        
         <section data-transition="fade-in">
           <img data-src="static/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
         </section>
@@ -270,20 +307,21 @@
         <section data-transition="fade-in">
           <img data-src="static/img/youtube-full-page-without-video-stats-3.png" style="border:none;padding:0;margin-top:-60px;">
         </section>
+        
+        <section><img data-src="static/img/videoviewui-microservice-rating.svg" style="border:none;"></section>
 
+        
         <section data-transition="fade-in">
           <img data-src="static/img/youtube-full-page-without-video-stats-4.png" style="border:none;padding:0;margin-top:-60px;">
         </section>
 
-        <section><img data-src="static/img/videoviewui-microservice-rating.svg" style="border:none;"></section>
-
         <section><img data-src="static/img/videoviewui-microservice-rating-connected.svg" style="border:none;"></section>
 
-        <section>
+        <section data-background="#368da2">
           <h2>FIN</h2>
         </section>
 
-        <section>
+        <section data-background="#b5533c">
           <h2>Fragen?</h2>
         </section>
       </div>
