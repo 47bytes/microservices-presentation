@@ -3,12 +3,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="static/revealjs/css/reveal.css">
     <link rel="stylesheet" href="static/revealjs/css/theme/white.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <style>
-      body {
-        font-family: 'Open Sans', sans-serif;
-      }
-    </style>
   </head>
   <body>
     <div class="reveal">
@@ -22,7 +16,7 @@
         </section>
 
         <section data-background="#b5533c">
-          <h3>Monolithische Software-Architektur</h3>
+          <h3>Monolith</h3>
           <span class="fragment">am Beispiel von</span>
         </section>
 
@@ -72,8 +66,12 @@
 
         <section>
           <h3>einfach zu Entwickeln</h3>
-          <p class="fragment">die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
-          <p class="fragment">großer Erfahrungsschatz vorhanden</p>
+          <p class="fragment">Die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
+          <p class="fragment">Großer Erfahrungsschatz vorhanden</p>
+          <aside class="notes">
+            <p>die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
+            <p>großer Erfahrungsschatz vorhanden</p>
+          </aside>
         </section>
 
         <section>
@@ -83,18 +81,35 @@
 
         <section>
           <h3>einfach zu Testen</h3>
-          <p class="fragment">man kann immer den gesamten Monolithen testen</p>
-          <p class="fragment">keine/kaum Abhängigkeiten</p>
+          <p class="fragment">Monolith lässt sich synchron testen</p>
+          <p class="fragment">Keine/kaum Abhängigkeiten</p>
+          <aside class="notes">
+            <p>man kann immer den gesamten Monolithen testen</p>
+            <p>keine/kaum Abhängigkeiten</p>
+          </aside>
         </section>
 
         <section>
           <h3>einfach zu Verstehen</h3>
-          <p class="fragment">zu Anfang übersichtliche Codebase</p>
+          <p class="fragment">Zu Anfang übersichtliche Codebase</p>
+          <aside class="notes">
+            <p>zu Anfang übersichtliche Codebase</p>
+          </aside>
         </section>
 
         <section>
-          <h3>einfach zu Skalieren</h3>
-          <p class="fragment">Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+          <section>
+            <h3>einfach zu Skalieren</h3>
+            <p class="fragment">Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+            
+            <aside class="notes">
+              <p>Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+              <p>Scale Cube aus "the art of scalability"</p>
+            </aside>
+          </section>
+          <section>
+            <img src="static/img/scale-cube.png">
+          </section>
         </section>
 
         <section>
@@ -123,6 +138,12 @@
           <!--<p class="fragment">Modularität geht verloren</p>-->
           <p class="fragment">Neues Feature X braucht Library A in Version 3.15</p>
           <p class="fragment">Altes Feature Y braucht Library A in Version 2.8.02</p>
+          <aside class="notes">
+            <p>Änderung an Modul A verändert auch Modul B</p>
+            <!--<p class="fragment">Modularität geht verloren</p>-->
+            <p>Neues Feature X braucht Library A in Version 3.15</p>
+            <p>Altes Feature Y braucht Library A in Version 2.8.02</p>
+          </aside>
         </section>
 
         <section>
@@ -139,7 +160,9 @@
           <p class="fragment">Continuous Deployment schwer umzusetzen</p>
           
           <aside class="notes">
-            hintergrund jobs - taskschedeuling
+            <p>Änderungen in einem Modul benötigen Redeploy der gesamten Applikation</p>
+            <p>Continuous Deployment schwer umzusetzen</p>
+            <p>hintergrund jobs - taskschedeuling</p>
           </aside>
         </section>
 
@@ -154,6 +177,9 @@
             wird <span style="color:#af0000;">schwer performant zu Skalieren</span>
           </h3>
           <p class="fragment">Ressourcenhungrig</p>
+          <aside class="notes">
+            <p>Ressourcenhungrig</p>
+          </aside>
         </section>
 
         <section>
@@ -167,22 +193,29 @@
             wird <span style="color:#af0000;">schwer zu Folgen</span>
           </h3>
           <p class="fragment">Besonders neue Entwickler werden durch komplexe monolithische Codebase eingeschüchtert</p>
-          <p class="fragment">Schwer zu ändern</p>
+          <p class="fragment">Schwer Änderungen zu implementieren</p>
           <aside class="notes">
-            aus schwer zu verstehen => schwer zu ändern => entwicklungsgeschwindigkeit nimmt drastisch ab
-            keinen ZWANG modularität zu wahren => modularität bricht zusammen
-            aus schwer zu verstehen => wie implementiert man richtig änderungen? => wann wird es zeit zu refactorn? => codequality nimmt ab
+            <p>Besonders neue Entwickler werden durch komplexe monolithische Codebase eingeschüchtert</p>
+            <p>Schwer Änderungen zu implementieren</p>
+            <ul>
+            <li>keinen ZWANG modularität zu wahren => modularität bricht zusammen</li>
+            <li>aus schwer zu verstehen => schwer zu ändern => entwicklungsgeschwindigkeit nimmt drastisch ab</li>
+            <li>aus schwer zu verstehen => wie implementiert man richtig änderungen? => wann wird es zeit zu refactorn? => codequality nimmt ab</li>
+            <li>ein ewig schlimmer werdender kreislauf</li>
+            <li>lähmt entwickler</li>
+            </ul>
           </aside>
         </section>
 
         <section>
           <h3>Fear of change</h3>
+          <h4>Die Angst Code zu ändern</h4>
           <img style="border:none" data-src="static/img/icd-10-fear-of-change.png">
           <p class="fragment">Lässt Entwicklungsgeschwindigkeit drastisch abnehmen</p>
         </section>
 
         <section data-background="#368da2">
-          <h2>Microservice Architektur</h2>
+          <h2>Microservices</h2>
         </section>
 
         <section>
@@ -195,13 +228,14 @@
             &ldquo;Do One Thing and Do It Well&rdquo;
           </blockquote>
         </section>
-
+        
         <section>
           <h3>Vor allem sind Microservices...</h3>
         </section>
 
         <section>
-          <h3>...der neue heiße Scheiß</h3>
+          <h3>...der neue heiße Scheiß (*)</h3>
+          <p style="font-size:0.5em;">(*) "Source sans Pro" kennt kein ß in ALLCAPS</p>
         </section>
 
         <section>
@@ -210,11 +244,11 @@
         </section>
 
         <section>
-          <section>
-          <img data-src="static/img/videoviewui-base.svg" style="border:none;">
-        </section>
           <section data-transition="fade-in">
             <img data-src="static/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
+          </section>
+          <section>
+            <img data-src="static/img/videoviewui-base.svg" style="border:none;">
           </section>
         </section>
 
@@ -228,13 +262,15 @@
 
         <section>
           <h3>einfache, kleine Services</h3>
-          <aside class="notes">
-            notiz
-          </aside>
         </section>
 
         <section>
+          <section>
           <h3>Individuelles skalieren von Services</h3>
+          </section>
+          <section>
+            <img style="border:none" src="static/img/scale-cube.png">
+          </section>
         </section>
 
         <section>
@@ -244,17 +280,41 @@
         <section>
           <h3>Einfacher neue Technologien auszuprobieren</h3>
         </section>
-
+        
         <section data-background="#368da2">
-          <h2>Was ist zu beachten?</h2>
+          <h2>Probleme #1</h2>
+          <h3>Wie kommunizieren Services miteinander?</h3>
+        </section>
+        
+        <section data-background="#368da2">
+          <h2>Probleme #2</h2>
+          <h3>Wie finden sich Services?</h3>
+        </section>
+        
+        <section data-background="#368da2">
+          <h2>Probleme #3</h2>
+          <h3>Wie kommunizieren Services miteinander?</h3>
+        </section>
+        
+        <section>
+          <h3>Eine Microservice Infrastruktur besteht aus:</h3>
+          <p class="fragment">N Services</p>
+          <p class="fragment"></p>
+          <p class="fragment"></p>
+          <p class="fragment"></p>
         </section>
         
         <section>
           <h3>API Gateway</h3>
+          The API Gateway is responsible for tasks such as load balancing, caching, access control, API metering, and monitoring
         </section>
         
         <section>
           <h3>Fehlertoleranz</h3>
+        </section>
+        
+        <section>
+          <h3>Monitoring</h3>
         </section>
         
         <section>
@@ -263,14 +323,6 @@
         
         <section>
           <h3>Logging</h3>
-        </section>
-
-        <section>
-          <h3>Messaging</h3>
-          <p>Messaging oder RPC</p>
-          <aside class="notes">
-            gRPC, Protobuf,
-          </aside>
         </section>
         
         <section>
@@ -285,7 +337,7 @@
         <section><img data-src="static/img/microservice-patterns.jpg" style="border:none;"></section>
 
         <section data-background="#368da2">
-          <h3 id="second-slide">Wie macht man aus einer monolithischen- eine Microservice Infrastruktur?</h3>
+          <h3>Wie macht man aus einer monolithischen- eine Microservice Infrastruktur?</h3>
         </section>
 
         <section data-transition="fade-in">
