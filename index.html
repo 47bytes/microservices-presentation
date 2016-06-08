@@ -283,7 +283,29 @@
         
         <section data-background="#368da2">
           <h2>Probleme #1</h2>
-          <h3>Wie kommunizieren Services miteinander?</h3>
+          <h3>Wie kommunizieren Services untereinander?</h3>
+        </section>
+        
+        <section>
+          <h3>API Gateway</h3>
+          <img style="border:none" src="static/img/api-gateway.png">
+          <aside class="notes">
+            <p>Fehlertoleranz, load balancing, caching, access control, and monitoring, API metering</p>
+          <aside>
+        </section>
+        
+        <section>
+          <h3>HTTP-based oder RPC</h3>
+            <p class="fragment">
+              HTTP-based: JSON, XML, Binary z.b. Googles Protobuf oder Apache Avro
+            </p>
+            <P class="fragment">
+              RPC: Apache Thrift, gRPC
+            </p>
+          <aside class="notes">
+            gRPC, Protobuf, Apache Thrift (REST alternative bzw RPC)
+            Versionieren von Messages!
+          </aside>
         </section>
         
         <section data-background="#368da2">
@@ -291,22 +313,48 @@
           <h3>Wie finden sich Services?</h3>
         </section>
         
+        <section>
+          <h3>Service Registry</h3>
+        </section>
+        
+        <section>
+          <h3>Client Side Discovery</h3>
+          <img style="border:none;margin-top:-50px; height:100%;" src="static/img/client-side-discovery.png">
+        </section>
+        
+        <section>
+          <h3>Server Side Discovery</h3>
+          <img style="border:none" src="static/img/server-side-discovery.png">
+        </section>
+        
         <section data-background="#368da2">
           <h2>Probleme #3</h2>
-          <h3>Wie kommunizieren Services miteinander?</h3>
+          <h3>Wie persistiert man Daten über mehrere Services hinweg?</h3>
         </section>
         
         <section>
-          <h3>Eine Microservice Infrastruktur besteht aus:</h3>
-          <p class="fragment">N Services</p>
-          <p class="fragment"></p>
-          <p class="fragment"></p>
-          <p class="fragment"></p>
+          <h3>Event Basierend</h3>
         </section>
         
         <section>
-          <h3>API Gateway</h3>
-          The API Gateway is responsible for tasks such as load balancing, caching, access control, API metering, and monitoring
+          <img style="border:none" src="static/img/event-driven-1.png">
+        </section>
+        
+        <section>
+          <img style="border:none" src="static/img/event-driven-2.png">
+        </section>
+        
+        <section>
+          <img style="border:none" src="static/img/event-driven-3.png">
+        </section>
+        
+        <section>
+          <h3>Message Broker</h3>
+          <p class="fragment">RabbitMQ, Apache Kafka, Celery</p>
+        </section>
+        
+        <section data-background="#368da2">
+          <h2>Was ist zu Beachten?<h2>
         </section>
         
         <section>
@@ -324,24 +372,19 @@
         <section>
           <h3>Logging</h3>
         </section>
-        
-        <section>
-          <h3>Versioning von Messages</h3>
-        </section>
-
-        <section>
-          <h3>Service Discovery</h3>
-          <p>Client- oder Server-side Discovery</p>
-        </section>
 
         <section><img data-src="static/img/microservice-patterns.jpg" style="border:none;"></section>
 
         <section data-background="#368da2">
-          <h3>Wie macht man aus einer monolithischen- eine Microservice Infrastruktur?</h3>
+          <p>...und die Entwickler so: "Yey Microservices. Wir bauen heute noch alles um"</p>
         </section>
-
-        <section data-transition="fade-in">
-          <img data-src="static/img/from-monolith-to-microservice.png" style="border:none;padding:0;margin-top:-60px;">
+        
+        <section data-background="#368da2">
+          <p>...und das Produktmanagement so: "Wir haben keine Zeit für ein Rewrite!"</p>
+        </section>
+        
+        <section data-background="#368da2">
+          <h2>Wie macht man aus einer monolitischen- eine Microservice-Infrastruktur?</h2>
         </section>
         
         <section data-transition="fade-in">
@@ -360,8 +403,13 @@
           <img data-src="static/img/youtube-full-page-without-video-stats-3.png" style="border:none;padding:0;margin-top:-60px;">
         </section>
         
+        <section data-transition="fade-in">
+          <img data-src="static/img/from-monolith-to-microservice.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+        
+        <!--
         <section><img data-src="static/img/videoviewui-microservice-rating.svg" style="border:none;"></section>
-
+        -->
         
         <section data-transition="fade-in">
           <img data-src="static/img/youtube-full-page-without-video-stats-4.png" style="border:none;padding:0;margin-top:-60px;">
