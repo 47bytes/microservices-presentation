@@ -1,50 +1,593 @@
-<!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
 
-		<title>reveal.js</title>
+        <section data-state="front">
+          <h2>
+            <span class="fragment highlight-blue" data-fragment-index="2">Microservices</span> &gt;
+            <span class="fragment highlight-red" data-fragment-index="1">Monolith</span>
+          </h2>
+        </section>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <section data-background="#b5533c">
+          <h3>Monolith</h3>
+          <span class="fragment">am Beispiel von</span>
+        </section>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <section data-transition="fade-out">
+          <img data-src="lib/img/youtube-full-page.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-1.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-2.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-3.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-4.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-5.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-6.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-7.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/videoviewui-base.svg" style="border:none;">
+        </section>
+
+        <section data-background="#b5533c">
+          <h2>Vorteile</h2>
+        </section>
+
+        <section>
+          <h3>einfach zu Entwickeln</h3>
+          <p class="fragment">Die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
+          <p class="fragment">Großer Erfahrungsschatz vorhanden</p>
+          <aside class="notes">
+            <p>die meisten Entwicklungswerkzeuge/Frameworks sind auf monolithische Software ausgelegt</p>
+            <p>großer Erfahrungsschatz vorhanden</p>
+          </aside>
+        </section>
+
+        <section>
+          <h3>einfach zu Deployen</h3>
+          <pre class="fragment"><code data-trim data-noescape>$ scp -rp ./monolith root@webserver:/srv</code></pre>
+        </section>
+
+        <section>
+          <h3>einfach zu Testen</h3>
+          <p class="fragment">Monolith lässt sich synchron testen</p>
+          <p class="fragment">Keine/kaum Abhängigkeiten</p>
+          <aside class="notes">
+            <p>man kann immer den gesamten Monolithen testen</p>
+            <p>keine/kaum Abhängigkeiten</p>
+          </aside>
+        </section>
+
+        <section>
+          <h3>einfach zu Verstehen</h3>
+          <p class="fragment">Zu Anfang übersichtliche Codebase</p>
+          <aside class="notes">
+            <p>zu Anfang übersichtliche Codebase</p>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h3>einfach zu Skalieren</h3>
+            <p class="fragment">Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+
+            <aside class="notes">
+              <p>Monolithen auf mehreren Servern spawnen + Load Balancing</p>
+              <p>Scale Cube aus "the art of scalability"</p>
+            </aside>
+          </section>
+          <section>
+            <img src="lib/img/scale-cube.png">
+          </section>
+        </section>
+
+        <section>
+          <h3>eine monolithische Software-Architektur ist also:</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1">einfach zu entwickeln <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu deployen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu testen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu verstehen <span class="fragment" data-fragment-index="2">(*)</span></li>
+            <li class="fragment" data-fragment-index="1">einfach zu skalieren <span class="fragment" data-fragment-index="2">(*)</span></li>
+          </ul>
+          <p class="fragment" data-fragment-index="2">(*) zumindest zu Beginn</span>
+        </section>
+
+        <section>
+          <h3>
+            Denn im Laufe der Zeit wird aus <span style="color:#af0000;">einfach zu Entwickeln</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            <span style="color:#af0000;">schwer weiterzuentwickeln</span>
+          </h3>
+          <p class="fragment">Änderung an Modul A verändert auch Modul B</p>
+          <!--<p class="fragment">Modularität geht verloren</p>-->
+          <p class="fragment">Neues Feature X braucht Library A in Version 3.15</p>
+          <p class="fragment">Altes Feature Y braucht Library A in Version 2.8.02</p>
+          <aside class="notes">
+            <p>Änderung an Modul A verändert auch Modul B</p>
+            <!--<p class="fragment">Modularität geht verloren</p>-->
+            <p>Neues Feature X braucht Library A in Version 3.15</p>
+            <p>Altes Feature Y braucht Library A in Version 2.8.02</p>
+          </aside>
+        </section>
+
+        <section>
+          <h3>
+            Aus <span style="color:#af0000;">einfach zu Deployen</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            wird <span style="color:#af0000;">kompliziert zu Deployen</span>
+          </h3>
+          <p class="fragment">Änderungen in einem Modul benötigen Redeploy der gesamten Applikation</p>
+          <p class="fragment">Continuous Deployment schwer umzusetzen</p>
+
+          <aside class="notes">
+            <p>Änderungen in einem Modul benötigen Redeploy der gesamten Applikation</p>
+            <p>Continuous Deployment schwer umzusetzen</p>
+            <p>hintergrund jobs - taskschedeuling</p>
+          </aside>
+        </section>
+
+        <section>
+          <h3>
+            Aus <span style="color:#af0000;">einfach zu Skalieren</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            wird <span style="color:#af0000;">schwer performant zu Skalieren</span>
+          </h3>
+          <p class="fragment">Ressourcenhungrig</p>
+          <aside class="notes">
+            <p>Ressourcenhungrig</p>
+          </aside>
+        </section>
+
+        <section>
+          <h3>
+            Aus <span style="color:#af0000;">einfach zu Verstehen</span>
+          </h3>
+        </section>
+
+        <section>
+          <h3>
+            wird <span style="color:#af0000;">schwer zu Folgen</span>
+          </h3>
+          <p class="fragment">Besonders neue Entwickler werden durch komplexe monolithische Codebase eingeschüchtert</p>
+          <p class="fragment">Schwer Änderungen zu implementieren</p>
+          <aside class="notes">
+            <p>Besonders neue Entwickler werden durch komplexe monolithische Codebase eingeschüchtert</p>
+            <p>Schwer Änderungen zu implementieren</p>
+            <ul>
+            <li>keinen ZWANG modularität zu wahren => modularität bricht zusammen</li>
+            <li>aus schwer zu verstehen => schwer zu ändern => entwicklungsgeschwindigkeit nimmt drastisch ab</li>
+            <li>aus schwer zu verstehen => wie implementiert man richtig änderungen? => wann wird es zeit zu refactorn? => codequality nimmt ab</li>
+            <li>ein ewig schlimmer werdender kreislauf</li>
+            <li>lähmt entwickler</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h3>Fear of change</h3>
+          <h4>Die Angst Code zu ändern</h4>
+          <img style="border:none" data-src="lib/img/icd-10-fear-of-change.png">
+        </section>
+
+        <section data-background="#368da2">
+          <h2>Microservices</h2>
+        </section>
+
+        <section>
+          <h3>Was sind Microservices?</h3>
+          <blockquote class="fragment">
+            &ldquo;Microservices sind ein Architekturmuster der Informationstechnik, bei dem komplexe Anwendungssoftware aus kleinen, unabhängigen Prozessen komponiert wird, die untereinander mit sprachunabhängigen Programmierschnittstellen kommunizieren.&rdquo;
+          </blockquote>
+          </p>
+          <blockquote class="fragment">
+            &ldquo;Do One Thing and Do It Well&rdquo;
+          </blockquote>
+        </section>
+
+        <section>
+          <h3>Vor allem sind Microservices...</h3>
+        </section>
+
+        <section>
+          <h3>...der neue heiße Scheiß (*)</h3>
+          <p style="font-size:0.5em;">(*) "Source sans Pro" kennt kein ß in ALLCAPS</p>
+        </section>
+
+        <section>
+          <h3>Gartner Hype Cycle</h3>
+          <img class="fragment" data-src="lib/img/Gartner_Hype_Zyklus.svg">
+        </section>
+
+        <section>
+          <section data-transition="fade-in">
+            <img data-src="lib/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
+          </section>
+          <section>
+            <img data-src="lib/img/videoviewui-base.svg" style="border:none;">
+          </section>
+        </section>
+
+        <section><img data-src="lib/img/videoviewui-microservice-db.svg" style="border:none;"></section>
+
+        <section><img data-src="lib/img/videoviewui-microservice-search.svg" style="border:none;"></section>
+
+        <section data-background="#368da2">
+          <h2>Vorteile</h2>
+        </section>
+
+        <section>
+          <h3>einfache, kleine Services</h3>
+        </section>
+
+        <section>
+          <section>
+          <h3>Individuelles skalieren von Services</h3>
+          </section>
+          <section>
+            <img style="border:none" src="lib/img/scale-cube.png">
+          </section>
+        </section>
+
+        <section>
+          <h3>Individuelles deployment von Services</h3>
+        </section>
+
+        <section>
+          <h3>Einfacher neue Technologien auszuprobieren</h3>
+        </section>
+
+        <section data-background="#368da2">
+          <h2>Probleme #1</h2>
+          <h3>Wie kommunizieren Services untereinander?</h3>
+        </section>
+
+        <section>
+          <h3>API Gateway</h3>
+          <img style="border:none" src="lib/img/api-gateway.png">
+          <aside class="notes">
+            <p>Fehlertoleranz, load balancing, caching, access control, and monitoring, API metering</p>
+          <aside>
+        </section>
+
+        <section>
+          <h3>HTTP-based oder RPC</h3>
+            <p class="fragment">
+              HTTP-based: JSON, XML, Binary z.b. Googles Protobuf oder Apache Avro
+            </p>
+            <P class="fragment">
+              RPC: Apache Thrift, gRPC
+            </p>
+          <aside class="notes">
+            gRPC, Protobuf, Apache Thrift (REST alternative bzw RPC)
+            Versionieren von Messages!
+          </aside>
+        </section>
+
+        <section data-background="#368da2">
+          <h2>Probleme #2</h2>
+          <h3>Wie finden sich Services?</h3>
+        </section>
+
+        <section>
+          <h3>Service Registry</h3>
+        </section>
+
+        <section>
+          <h3>Client Side Discovery</h3>
+          <img style="border:none;margin-top:-50px; height:100%;" src="lib/img/client-side-discovery.png">
+        </section>
+
+        <section>
+          <h3>Server Side Discovery</h3>
+          <img style="border:none" src="lib/img/server-side-discovery.png">
+        </section>
+
+        <section data-background="#368da2">
+          <h2>Probleme #3</h2>
+          <h3>Wie persistiert man Daten über mehrere Services hinweg?</h3>
+        </section>
+
+        <section>
+          <h3>Event Basierend</h3>
+        </section>
+
+        <section>
+          <img style="border:none" src="lib/img/event-driven-1.png">
+        </section>
+
+        <section>
+          <img style="border:none" src="lib/img/event-driven-2.png">
+        </section>
+
+        <section>
+          <img style="border:none" src="lib/img/event-driven-3.png">
+        </section>
+
+        <section>
+          <h3>Message Broker</h3>
+          <p class="fragment">RabbitMQ, Apache Kafka, Celery</p>
+        </section>
+
+        <section data-background="#368da2">
+          <h2>Was ist zu Beachten?<h2>
+        </section>
+
+        <section>
+          <h3>Fehlertoleranz</h3>
+        </section>
+
+        <section>
+          <h3>Monitoring</h3>
+        </section>
+
+        <section>
+          <h3>Logging</h3>
+        </section>
+
+        <section>
+          <h3>Test Strategie</h3>
+        </section>
+
+        <section>
+          <h3>Deploy Strategie</h3>
+        </section>
+
+        <section><img data-src="lib/img/microservice-patterns.jpg" style="border:none;"></section>
+
+        <section data-background="#368da2">
+          <p>...und die Entwickler so: </p>
+          <p>"Yey Microservices. Wir bauen heute noch alles um"</p>
+        </section>
+
+        <section data-background="#368da2">
+          <p>...und das Produktmanagement so: </p>
+          <p>"Wir wollen neue Features, keinen Rewrite! Davon merkt der Kunde doch eh nix..."</p>
+        </section>
+
+        <section data-background="#368da2">
+          <h2>Wie macht man aus einer monolitischen- eine Microservice-Infrastruktur?</h2>
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-8.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-without-video-stats-1.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-without-video-stats-2.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-without-video-stats-3.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/from-monolith-to-microservice.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <!--
+        <section><img data-src="lib/img/videoviewui-microservice-rating.svg" style="border:none;"></section>
+        -->
+
+        <section data-transition="fade-in">
+          <img data-src="lib/img/youtube-full-page-without-video-stats-4.png" style="border:none;padding:0;margin-top:-60px;">
+        </section>
+
+        <section><img data-src="lib/img/videoviewui-microservice-rating-connected.svg" style="border:none;"></section>
+
+        <section data-background="#368da2">
+          <h2>FIN</h2>
+        </section>
+
+        <section data-background="#b5533c">
+          <h2>Fragen?</h2>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+
+      // Display controls in the bottom right corner
+      controls: false,
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // Display the page number of the current slide
+      slideNumber: false,
+
+      // Push each slide change to the browser history
+      history: true,
+
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+
+      // Enable the slide overview mode
+      overview: true,
+
+      // Vertical centering of slides
+      center: true,
+
+      // Enables touch navigation on devices with touch input
+      touch: true,
+
+      // Loop the presentation
+      loop: false,
+
+      // Change the presentation direction to be RTL
+      rtl: false,
+
+      // Randomizes the order of slides each time the presentation loads
+      shuffle: false,
+
+      // Turns fragments on and off globally
+      fragments: true,
+
+      // Flags if the presentation is running in an embedded mode,
+      // i.e. contained within a limited portion of the screen
+      embedded: false,
+
+      // Flags if we should show a help overlay when the questionmark
+      // key is pressed
+      help: true,
+
+      // Flags if speaker notes should be visible to all viewers
+      showNotes: false,
+
+      // Number of milliseconds between automatically proceeding to the
+      // next slide, disabled when set to 0, this value can be overwritten
+      // by using a data-autoslide attribute on your slides
+      autoSlide: 0,
+
+      // Stop auto-sliding after user input
+      autoSlideStoppable: true,
+
+      // Use this method for navigation when auto-sliding
+      autoSlideMethod: Reveal.navigateNext,
+
+      // Enable slide navigation via mouse wheel
+      mouseWheel: false,
+
+      // Hides the address bar on mobile devices
+      hideAddressBar: true,
+
+      // Opens links in an iframe preview overlay
+      previewLinks: false,
+
+      // Transition style
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+
+      // Transition speed
+      transitionSpeed: 'default', // default/fast/slow
+
+      // Transition style for full page slide backgrounds
+      backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+      // Number of slides away from the current that are visible
+      viewDistance: 3,
+
+      // Parallax background image
+      parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+      // Parallax background size
+      parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+      // Number of pixels to move the parallax background per slide
+      // - Calculated automatically unless specified
+      // - Set to 0 to disable movement along an axis
+      parallaxBackgroundHorizontal: null,
+      parallaxBackgroundVertical: null,
+
+      dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        {
+          src: 'static/revealjs/lib/js/classList.js',
+          condition: function() {
+            return !document.body.classList;
+          }
+        },
+
+        // Interpret Markdown in <section> elements
+        {
+          src: 'static/revealjs/plugin/markdown/marked.js',
+          condition: function() {
+            return !!document.querySelector( '[data-markdown]' );
+          }
+        },
+
+        {
+          src: 'static/revealjs/plugin/markdown/markdown.js',
+          condition: function() {
+            return !!document.querySelector( '[data-markdown]' );
+          }
+        },
+
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        },
+        /*
+        // Syntax highlight for <code> elements
+        {
+          src: 'static/revealjs/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+
+        // Zoom in and out with Alt+click
+        {
+          src: 'static/revealjs/plugin/zoom-js/zoom.js',
+          async: true
+        },
+
+        // Speaker notes
+        {
+          src: 'static/revealjs/plugin/notes/notes.js',
+          async: true
+        },
+
+        // MathJax
+        {
+          src: 'static/revealjs/plugin/math/math.js',
+          async: true
+        }
+        */
+
+      ]
+
+
+    });
+    </script>
+  </body>
 </html>
